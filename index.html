@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <title>Doe Sangue</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <style>
+
+            *{
+            box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Roboto';
+                margin: auto;
+                background-color: #f9f9f9;
+                text-align: center;
+                max-width: 500px;
+            }
+
+            p {
+                color: rgba(0, 0, 0, 0.747);
+            }
+
+            span {
+                color: rgba(255, 0, 0, 0.753);
+                font-weight: bolder;
+            }
+
+            .logo {
+                width: 130px;
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+
+            .donors {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                margin: auto;
+                max-width: 500px;
+            }
+
+            .donor {
+                font-size: 15px;
+            }
+
+            .donor p {
+                text-align: center;
+                font-weight: bold;
+                margin-top: 30px;
+                font-size: 12px;
+            }
+
+            .lastDonors {
+                margin-top: 40px;
+                margin-bottom: 60px;
+            }
+
+            .lastDonors {
+                margin-top: -30px;
+            }
+
+            .lastDonors.hide {
+                margin-top: 40px;
+            }
+
+            .form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                background-color: red;
+                max-width: 500px;
+                padding: 10px 16px;
+                margin: auto;
+                margin-bottom: 0px;
+                margin-top: 30px;
+                border-radius: 4px;
+                align-items: center;
+            }
+
+            .form h2 {
+                text-align: right;
+                font-weight: bold;
+                font-size: 20px;
+                color: rgba(255, 255, 255, 0.911);
+                margin-left: 10px;
+            }
+
+            .form input {
+                background-color: red;
+                border: 1px rgba(255, 255, 255, 0.89) solid;
+                border-radius: 4px;
+                margin: 5px;
+                padding: 8px 16px;
+            }
+
+            input::placeholder {
+                color: white;
+                text-align: center;         
+            }
+
+            .outside {
+                margin-top: 30px;
+                margin-bottom: 10px;
+                padding: 8px 16px;
+                font-weight: bolder;
+                color: white;
+                background-color: red;
+                border: none;
+                border-radius: 4px;
+            }
+
+            .inside {
+                background-color: white;
+                color: red;
+                margin: 5px;
+                padding: 8px 16px;
+                border: none;
+                border-radius: 4px;
+                text-align: center;
+                font-weight: bold;
+                width: 200px;
+            }
+
+            section.form {
+                transition: all 300ms;
+            }
+
+            section.form.hide {
+                opacity: 0;
+                visibility: hidden;
+                margin-top: -100px;
+            }
+
+            .blood {
+                color: #ff4f4f;
+                font-weight: bold;
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+
+            .blood::before{
+                content: "";
+                background-color: #ff4f4f11;
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                border-radius: 50%;
+                border-top-right-radius: 0;
+                transform: rotate(-45deg);
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <header>
+            <img src="logo.png" class="logo">
+
+            <h2>A sua doação importa!</h2>
+
+            <p>Até 3 vidas com apenas <b>uma</b> doação</p>
+
+            <p>Mais de 38.000 doações são necessárias <b>todos os dias</b></p>
+
+            <p>Apenas 1,9% da população brasileira doa sangue.</p>
+            
+            <button class="outside">Quero ajudar!</button>
+        </header>
+
+        <section class="form hide">
+            <div class="left">
+                <h2>Entre na lista de doadores </h2>
+            </div>
+            <div class="right">
+                <input type="text" name="name" placeholder="Nome completo">
+                <input type="text" name="email" placeholder="Email">
+                <input type="text" name="blood" placeholder="Tipo sanguíneo">
+                <button class="inside">Quero ajudar</button>
+            </div>
+        </section>
+        
+        <h2 class="lastDonors">Últimos <span>doadores</span></h2>
+
+        <section class="donors">
+
+            <div class="donor">
+                <div class="blood">O-</div>
+                <p>Willian Tavares</p>
+            </div>
+
+            <div class="donor">
+                <div class="blood">A+</div>
+                <p>Karina Quintanilha</p>
+            </div>
+
+            <div class="donor">
+                <div class="blood">AB-</div>
+                <p>Joao Victor</p>
+            </div>
+
+            <div class="donor">
+                <div class="blood">B+</div>
+                <p>Moço Bobo da Silva</p>
+            </div>
+            
+            
+        </section>
+
+        <script>
+
+            // some code
+            document.querySelector('.outside').addEventListener('click', () => {
+                document.querySelector('.form').classList.toggle('hide')
+                document.querySelector('.lastDonors').classList.toggle('hide')
+            })
+ 
+        </script>
+    </body>
+
+</html>
